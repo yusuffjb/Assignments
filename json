@@ -1,0 +1,20 @@
+import json
+with open("words.json","r", encoding="utf-8") as myfile:
+    f = myfile.read()
+val = json.loads(f)
+var = {}
+var1 = {}
+for i in val:
+    key1 = i["word"]
+    key2 = i["meanings"]
+    for j in key2:
+        key3 = j["partOfSpeech"]
+        value1 = j["definitions"]
+        list = []
+        for k in value1:
+            list.append(k["definition"])
+        var[key3] = list
+    var1[key1] = var
+with open("out.json","w",encoding="utf-8") as x:
+    final = x.write(json.dumps(var1, indent=2))
+    print(var1)
