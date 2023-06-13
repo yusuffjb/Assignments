@@ -1,5 +1,5 @@
 def role_based_access(user_roles):
-    def decorator_func(func):sjehebfdbasljfhh
+    def decorator_func(func):
         def wrapper(*args, **kwargs):
             ip = input('enter the input:')
             if ip in user_roles:
